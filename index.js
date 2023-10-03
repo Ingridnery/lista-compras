@@ -39,14 +39,14 @@ app.delete("/user/:id", userController.deleteUser);
 app.get("/item", itemController.findAll);
 app.get("/item/:id", itemController.findById);
 app.get("/item/user/:id", itemController.findByIdUser)
-app.post("/item", itemController.validationMiddleware, itemController.create);
+app.post("/item", itemController.autenticado,itemController.validationMiddleware, itemController.create);
 app.put("/item/:id", itemController.validationMiddleware, itemController.update);
 app.delete("/item/:id", itemController.deleteItem);
 app.get("/lista-compartilhada/:id", itemController.listaCompartilhada);
 
 app.post("/compartilhar", itemController.compartilhar);
 app.post('/login', passport.authenticate('local',{
-    successRedirect: '/user' //redirecionar para onde eu decidir no futuro
+    successRedirect: '/' //redirecionar para onde eu decidir no futuro
 }));
 app.get('/logout', (req, res) => {
     req.logout((err) => {

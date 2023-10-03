@@ -1,6 +1,8 @@
 const validacao = require("../validator/validacoes.js");
 const User = require ("../models/user");
 const passport = require('passport');
+const bcrypt = require('bcrypt');
+
 const LocalStrategy = require('passport-local').Strategy;
 
 
@@ -50,10 +52,12 @@ async function findByIdUser(id){
 }
 async function create(req, res){
     const {nome, email, senha} = req.body;
+    //senha hash
+    const senhaHash = await bcrypt.hashSync(senha, 10);
     const user = await User.create({
         nome,
         email,
-        senha,
+        senha: senhaHash,
     });
     user.save();
 
@@ -83,8 +87,12 @@ async function deleteUser(req, res) {
 }
 
 async function login(email,senha,done){
-    const user = await User.findOne({where: {email: email, senha: senha}});
+    const user = await User.findOne({where: {email: email}});
     if(!user){
+        return done(null,false,{message: "Email incorretos"});
+    }
+    const senhaCorrespondente = await bcrypt.compare(senha, user.senha);
+    if(!senhaCorrespondente){
         return done(null,false,{message: "Email ou senha incorretos"});
     }
     return done(null,user);

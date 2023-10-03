@@ -42,6 +42,14 @@ async function update(req, res){
     }
     return res.status(200).json({item: item});
 }
+function autenticado(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }else{
+        return res.status(400).json({error: "Usuário não autenticado"});
+    }
+}
+
 async function findByIdUser(req, res){
     const {id} = req.params;
     const items = await Item.findAll({where: {usuario_id: id}});
@@ -84,4 +92,4 @@ const validationMiddleware = (request, response, next) => {
       response.status(422).json({ error: message })
     } 
 }
-module.exports = {findAll, findById, create, update, deleteItem, validationMiddleware, findByIdUser,compartilhar,listaCompartilhada};
+module.exports = {findAll, findById, create, update, autenticado,deleteItem, validationMiddleware, findByIdUser,compartilhar,listaCompartilhada};
