@@ -1,0 +1,21 @@
+@import "../../sass/abstract/variables";
+
+.container{
+    display: flex;
+    flex-direction: row;
+
+    background-color: $white-green;
+    padding: 1em;
+    max-width: fit-content;
+
+    a {
+        width: 33%;
+        
+        img {
+            width: auto;
+            max-width: 100%;
+            max-height: 50%;
+            border-radius: 60%;
+        }
+    }
+}
