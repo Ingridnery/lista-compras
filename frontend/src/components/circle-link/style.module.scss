@@ -1,0 +1,11 @@
+@import "../../sass/abstract/variables";
+
+a {
+    width: fit-content;
+    height: fit-content;
+    
+    img {
+        width: 11rem;
+        border-radius: 60%;
+    }
+}
