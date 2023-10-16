@@ -11,6 +11,10 @@
     font-family: $tilt-neon;
     padding: 0.3em;
 
+    margin: 0.5em 0em;
+
+    box-shadow: 2px 2px 2px black;
+
     &:hover{
         background-color: $secundary;
         color: $quaternary  ;

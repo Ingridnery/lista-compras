@@ -19,11 +19,12 @@
                 width: 10rem;
                 border-radius: 60%;
                 box-shadow: 2px 5px 5px black;
+                opacity: 1;
             }
         }
 
         &:hover{
-            opacity: 0.7;
+            opacity: 0.8;
             text-decoration: underline;
         }
     }
