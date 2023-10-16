@@ -1,3 +1,4 @@
+import Button from "../button/Button";
 import Header from "../header/Header";
 import styles from "./style.module.scss"
 
@@ -6,16 +7,37 @@ export default function HomeCard(){
         <div className={styles.home}>
             <Header/>
 
-            <p className={styles.text}>
+            <span className={styles.text}>
                 Mussum Ipsum, cacilds vidis litro abertis. 
                 Quem num gosta di mim que vai caçá sua turmis! 
                 Pellentesque nec nulla ligula. Donec gravida turpis a vulputate ultricies. 
                 Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!
                 Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. 
                 Sed non consequat odio.
-            </p>
+            </span>
 
-            <button className={styles.button}>Login</button>
+            <span className={styles.text}>
+                Mussum Ipsum, cacilds vidis litro abertis. 
+                Quem num gosta di mim que vai caçá sua turmis! 
+                Pellentesque nec nulla ligula. Donec gravida turpis a vulputate ultricies. 
+                Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!
+                Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. 
+                Sed non consequat odio.
+            </span>
+
+            <span className={styles.text}>
+                Mussum Ipsum, cacilds vidis litro abertis. 
+                Quem num gosta di mim que vai caçá sua turmis! 
+                Pellentesque nec nulla ligula. Donec gravida turpis a vulputate ultricies. 
+                Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!
+                Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. 
+                Sed non consequat odio.
+            </span>
+
+            <div className={styles.buttons}>
+                <Button>Sign In</Button>
+                <Button>Sign Up</Button>
+            </div>
         </div>
     )
 }

@@ -1,0 +1,18 @@
+@import "../../sass/abstract/variables";
+
+.button{
+    border-style: none;
+    border-radius: 5%;
+
+    color: $secundary;
+    background-color: $quaternary;
+
+    font-size: 2em;
+    font-family: $tilt-neon;
+    padding: 0.3em;
+
+    &:hover{
+        background-color: $secundary;
+        color: $quaternary  ;
+    }
+}
