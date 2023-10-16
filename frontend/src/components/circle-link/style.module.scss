@@ -1,11 +1,37 @@
 @import "../../sass/abstract/variables";
 
-a {
-    width: fit-content;
-    height: fit-content;
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    .circleLink{
+        margin: 0em 1.5em;
+        margin-bottom: 1em;
+        
+
+        .link {
+            width: fit-content;
+            height: fit-content;
+            
+            .image {
+                width: 10rem;
+                border-radius: 60%;
+                box-shadow: 2px 5px 5px black;
+            }
+        }
+
+        &:hover{
+            opacity: 0.7;
+            text-decoration: underline;
+        }
+    }
     
-    img {
-        width: 11rem;
-        border-radius: 60%;
+    .text {
+        font-family: $tilt-neon;
+        font-weight: bolder;
+        font-size: large;
+        color: $quaternary;
     }
 }

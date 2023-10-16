@@ -1,0 +1,19 @@
+@import "../../sass/abstract/variables";
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    background-color: $primary;
+    margin-bottom: 2em;
+
+    .text{
+        font-size: 1em;
+        font-family: $tilt-neon;
+        color: $secundary;
+        text-align: center;
+    }
+}

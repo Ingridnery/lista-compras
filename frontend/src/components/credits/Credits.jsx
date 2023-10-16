@@ -6,16 +6,22 @@ export default function Credits(){
         <div className={styles.container}>
 
             <CircleLink 
+            className={styles.item}
             link="https://github.com/Ingridnery/lista-compras" 
-            image="./octocat-512.png" alt="Octocat icon"/>
+            image="./github.png" alt="Octocat icon"
+            text="Repository"/>
             
             <CircleLink 
+            className={styles.item}
             link="https://github.com/Ingridnery" 
-            image="./ingrid.jpg" alt="Dev icon"/>
+            image="./ingrid.jpg" alt="Dev icon"
+            text="Ingrid Nery"/>
             
             <CircleLink 
+            className={styles.item}
             link="https://github.com/Vitor5bonelli" 
-            image="./vitor.png" alt="Dev icon"/>
+            image="./vitor.png" alt="Dev icon"
+            text="Vitor Bonelli"/>
 
         </div>
     )
