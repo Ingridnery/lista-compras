@@ -2,7 +2,17 @@
 
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
+
+    background-color: $primary;
+    border-radius: 1%;
+
+    box-shadow: 3px 3px 6px black;
+
+    opacity: 0.85;
+
+    width: 50em;
+    height: 40em;
 }

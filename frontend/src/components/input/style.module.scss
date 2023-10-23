@@ -1,5 +1,44 @@
 @use "../../sass/abstract/variables";
 
-.input {
-    border-radius: 5%;
+.container{
+
+    opacity: 1;
+
+    display: flex;
+    flex-direction: row;
+    background-color: variables.$tertiary;
+    justify-content: flex-start;
+    align-items: center;
+
+    border-radius: 15px;
+    padding: 1em;
+
+    box-shadow: black 1px 1px 1px;
+    margin-bottom: 1em;
+    width: 30em;
+
+    &:hover{
+        outline: black solid 2px;
+    }
+
+    .input {
+        border: none;
+        background-color: variables.$tertiary;
+        color: variables.$tertiary;
+        font-size: 2em;
+
+        &:focus{
+            outline: none;
+        }
+
+        &::placeholder{
+            color: variables.$primary;
+        }
+    }
+
+    .icon{
+        width: 2em;
+        height: 2em;
+        margin-right: 0.5em;
+    }
 }

@@ -1,0 +1,18 @@
+@use "./variables";
+
+@mixin descriptionStyle{
+    font-size: 1.2em;
+    font-family: variables.$tilt-neon;
+    color: variables.$quaternary;
+    text-align: left;
+
+    padding: 0.5em 1.3em;
+
+    opacity: 1;
+}
+
+@mixin centerAll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -14,9 +14,11 @@
     margin: 0.5em 0em;
 
     box-shadow: 2px 2px 2px black;
+    
 
     &:hover{
         background-color: $secundary;
-        color: $quaternary  ;
+        color: $quaternary;
+        cursor: pointer;
     }
 }

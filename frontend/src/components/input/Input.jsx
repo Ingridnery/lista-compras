@@ -2,6 +2,9 @@ import styles from "./style.module.scss"
 
 export default function Input(props){
     return(
-        <input className="input" type={props.type} name={props.name} placeholder={props.children}/>
+        <div className={styles.container}>
+            <img className={styles.icon} src={props.logo} alt="Icon" />
+            <input className={styles.input} type={props.type} name={props.name} placeholder={props.children}/>
+        </div>
     )
 }
