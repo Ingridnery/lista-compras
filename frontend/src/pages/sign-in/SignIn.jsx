@@ -1,14 +1,24 @@
 import SignCard from '../../components/sign-card/SignCard'
 import Button from "../../components/button/Button";
 import Header from "../../components/header/Header";
+import Input from "../../components/input/Input"
 import styles from './style.module.scss'
 
-export default function Input(props){
+export default function SignIn(props){
     return(
-        <div className="container">
-            <SignCard/>
+        <div className={styles.container}>
 
-            <Button></Button>
+            <SignCard>
+
+                <Header/>
+
+                <Input type="text" name="name">Name</Input>
+
+                <Button>Submit</Button>
+
+            </SignCard>
+            
+            
         </div>
     )
 }
