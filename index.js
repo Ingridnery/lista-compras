@@ -65,8 +65,6 @@ app.get('/rota-protegida', (req, res) => {
     }
   });
 
-  
-
 passport.serializeUser(function(user, done) {
     done(null, user.id);
 });
