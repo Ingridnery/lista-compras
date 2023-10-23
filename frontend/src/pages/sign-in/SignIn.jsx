@@ -15,7 +15,7 @@ export default function SignIn(props){
 
                     <div className={styles.inputContainer}>
                         <form>
-                            <Input className={styles.input} type="text" name="name" logo="./user.png">Name / Email</Input>
+                            <Input className={styles.input} type="text" name="name" logo="./email.png">Email</Input>
                             <Input className={styles.input} type="password" name="password" logo="./padlock.png">Password</Input>
                         </form>
 

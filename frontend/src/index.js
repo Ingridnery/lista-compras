@@ -8,6 +8,6 @@ import SignUp from './pages/sign-up/SignUp';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <SignIn/>
+    <SignUp/>
   </React.StrictMode>
 );
