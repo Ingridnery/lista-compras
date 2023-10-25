@@ -35,8 +35,8 @@ export default function HomeCard(){
             </span>
 
             <div className={styles.buttons}>
-                <Button>Sign In</Button>
-                <Button>Sign Up</Button>
+                <Button path="/signin">Sign In</Button>
+                <Button path="/signup">Sign Up</Button>
             </div>
         </div>
     )
