@@ -3,7 +3,7 @@ const Joi = require("joi");
 const userSchema = Joi.object({
     nome: Joi.string().min(3).max(30).required(),
     email: Joi.string().email().required(),
-    senha: Joi.string().min(6).required()
+    senha: Joi.string().min(1).required()
 });
 const itemSchema = Joi.object({
     descricao: Joi.string().min(3).max(30).required(),

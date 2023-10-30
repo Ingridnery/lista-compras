@@ -5,7 +5,12 @@ export default function Button(props){
 
     let navigate = useNavigate();
     function handleClick(){
-        navigate(props.path)
+        if (props.onClick) {
+            props.onClick(); 
+        }
+        else if (props.path) {
+            navigate(props.path); // Navega para a rota se a prop path estiver definida
+        }
     }
 
     return(
