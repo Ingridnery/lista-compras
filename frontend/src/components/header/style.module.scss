@@ -10,6 +10,17 @@
 
     padding: 1.5em;
 
+    &:hover{
+
+        .title{
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+
+            cursor: pointer;
+        }
+
+    }
+
     .title{
         font-size: 5em;
         font-family: $tilt-neon;
