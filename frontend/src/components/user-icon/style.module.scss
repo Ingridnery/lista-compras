@@ -9,16 +9,18 @@
     background-color: variables.$secundary;
     border: 4px solid variables.$quaternary;
     border-radius: 50%;
-    width: 10em;
-    height: 10em;
+
+    width: 8.5vw;
+    height: 8.5vw;
+    
 
     .icon{
-        font-size: 4.7em;
-        margin-bottom: 0.2em;
+        font-size: 3.7vw;
+        margin-bottom: 0.1em;
     }
 
     .username{
-        font-size: 1em;
+        font-size: 1vw;
         font-weight: bolder;
         font-family: variables.$tilt-neon;
         color: black;

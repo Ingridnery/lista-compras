@@ -1,0 +1,44 @@
+@use "../../sass/abstract/variables";
+@use "../../sass/abstract/mixins";
+
+.container{
+    width: fit-content;
+
+    margin: 1em;
+
+    input{        
+        cursor: pointer;
+        height: 2.5em;
+        width: 2.5em;
+        margin-right: 1em;
+
+        -webkit-appearance: none;
+        background-color: variables.$primary;
+        border: 1px solid variables.$tertiary;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+        border-radius: 3px;
+        display: inline-block;
+        position: relative;
+
+        &:checked:after {
+            content: '\2714';
+            font-size: xx-large;
+            position: absolute;
+            color: variables.$quaternary;
+            text-align: center;
+            top: -5px;
+            left: 2px;
+        }
+    }
+
+    .input{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-family: variables.$tilt-neon;
+        color: variables.$primary;
+        font-size: x-large;
+    }
+
+}
