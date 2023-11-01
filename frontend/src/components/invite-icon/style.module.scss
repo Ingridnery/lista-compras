@@ -1,0 +1,31 @@
+@use "../../sass/abstract/variables";
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: variables.$secundary;
+    border: 4px solid variables.$quaternary;
+    border-radius: 50%;
+    width: 11em;
+    height: 11em;
+
+    .icon{
+        margin-bottom: 0.2em;
+
+        img{
+            width: 4.5em;
+            height: 4.5em;
+            opacity: 0.85;
+        }
+    }
+
+    .text{
+        font-size: 1em;
+        font-weight: bolder;
+        font-family: variables.$tilt-neon;
+        color: black;
+    }
+}
