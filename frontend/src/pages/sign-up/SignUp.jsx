@@ -5,18 +5,25 @@ import Header from "../../components/header/Header";
 import Input from "../../components/input/Input";
 import React, { useState } from 'react';
 import {createUser} from '../../services/api';
+import { useUserContext } from '../../UserContext';
+import { useNavigate } from 'react-router-dom';
 
 export default function SignUp(props){
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const { setUserId } = useUserContext(); // Use o hook para obter setUserId
+    const navigate = useNavigate();
+
 
     const handleCreateUser = async (e) => {
         try{
             const response = await createUser(name, email, password);
             if(response.user){
                 console.log("User created");
-                window.location.href = "/signin"; //redirecionar pra pagina de tarefas
+                setUserId(response.data.user.id);
+                navigate("/list");
+                //window.location.href = "/signin"; //redirecionar pra pagina de tarefas
             }
         }
         catch(err){

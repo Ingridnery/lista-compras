@@ -40,9 +40,9 @@ app.get("/item", itemController.findAll);
 app.get("/item/:id", itemController.findById);
 app.get("/item/user/:id", itemController.findByIdUser)
 app.post("/item", itemController.autenticado, itemController.validationMiddleware, itemController.create);
-app.put("/item/:id", itemController.validationMiddleware, itemController.update);
+app.put("/item/:id",itemController.update);
 app.delete("/item/:id", itemController.deleteItem);
-app.get("/lista-compartilhada/:id", itemController.listaCompartilhada);
+app.get("/lista/:id", itemController.listaCompartilhada);
 
 app.post("/compartilhar", itemController.compartilhar);
 app.post('/login', (req, res, next) => {
@@ -55,13 +55,12 @@ app.post('/login', (req, res, next) => {
       return res.status(401).json({ message: 'Credenciais inválidas' });
     }
 
-    // Se chegou aqui, o login foi bem-sucedido
     req.logIn(user, (err) => {
       if (err) {
         return res.status(500).json({ message: 'Erro ao efetuar login' });
       }
 
-      return res.json({ message: 'Login bem-sucedido' });
+      return res.status(200).json({ message: 'Login bem-sucedido', user });
     });
   })(req, res, next);
 });

@@ -53,18 +53,29 @@ async function findByIdUser(id) {
 
 }
 async function create(req, res) {
-    const { nome, email, senha } = req.body;
-    //senha hash
-    const senhaHash = await bcrypt.hashSync(senha, 10);
-    const user = await User.create({
-        nome,
-        email,
-        senha: senhaHash,
-    });
-    user.save();
+    try {
+        const { nome, email, senha } = req.body;
+        //senha hash
+        const senhaHash = await bcrypt.hashSync(senha, 10);
+        const user = await User.create({
+            nome,
+            email,
+            senha: senhaHash,
+        });
+        user.save();
+        req.login(user, (err) => {
+            if (err) {
+                return res.status(500).json({ message: 'Erro ao efetuar login' });
+            }
+            return res.status(201).json({ user: user });
+        });
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json({ error: "Erro ao criar usuário" });
+    }
 
-    return res.status(201).json({ user: user });
 }
+    
 async function update(req, res) {
     const { id } = req.params;
     const { nome, email, senha } = req.body;
