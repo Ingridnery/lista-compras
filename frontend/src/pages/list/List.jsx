@@ -8,10 +8,15 @@ import ToDo from "../../components/to-do/ToDo";
 import { updateItem } from "../../services/api";
 import { clearList } from "../../services/api";
 import { ToastContainer, toast } from "react-toastify";
+import ShareModal from "../../components/modal/ShareModal";
 
 export default function List() {
     const { userId } = useUserContext();
     const [items, setItems] = useState([]);
+    const [showModal, setShowModal] = useState(false);
+    const [shareableLink, setShareableLink] = useState(''); // Novo estado para o link
+
+
 
     useEffect(() => {
         async function fetchData() {
@@ -47,6 +52,17 @@ export default function List() {
             console.error("Erro ao atualizar o item", error);
         }
     }
+    const handleShareList = async () => {
+        try {
+            console.log("Compartilhar lista");
+            const shareableLink = `${window.location.origin}/list/${userId}`;
+            console.log(shareableLink);
+            setShareableLink(shareableLink); // Defina o link no estado
+            setShowModal(true);
+        } catch (error) {
+            console.error("Erro ao compartilhar a lista", error);
+        }
+    }
 
     return (
         <div className={styles.main}>
@@ -58,7 +74,9 @@ export default function List() {
                         <UserIcon username="Pessoa" />
                         <UserIcon username="People" />
                     </div>
-                    <InviteIcon />
+                    <InviteIcon onClick={()=> handleShareList()} />
+                    <ShareModal isOpen={showModal} link={shareableLink} onRequestClose={()=> setShowModal(false)} />
+
                 </div>
                 <div className={styles.todocontainer}>
                     <div className="todos">
