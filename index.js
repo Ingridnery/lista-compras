@@ -42,6 +42,7 @@ app.get("/item/user/:id", itemController.findByIdUser)
 app.post("/item", itemController.autenticado, itemController.validationMiddleware, itemController.create);
 app.put("/item/:id",itemController.update);
 app.delete("/item/:id", itemController.deleteItem);
+app.delete("/item/user/:id", itemController.deleteItemsUser);
 app.get("/lista/:id", itemController.listaCompartilhada);
 
 app.post("/compartilhar", itemController.compartilhar);

@@ -42,6 +42,14 @@ async function update(req, res){
     }
     return res.status(200).json({item: item});
 }
+async function deleteItemsUser(req, res){
+    const {id} = req.params;
+    console.log(id);
+    const itemsDelete = await Item.destroy({where: {usuario_id: id}});
+   
+    return res.status(200).json({sucesso: "Itens deletados"});
+}
+
 function autenticado(req, res, next){
     if(req.isAuthenticated()){
         return next();
@@ -92,4 +100,4 @@ const validationMiddleware = (request, response, next) => {
       response.status(422).json({ error: message })
     } 
 }
-module.exports = {findAll, findById, create, update, autenticado,deleteItem, validationMiddleware, findByIdUser,compartilhar,listaCompartilhada};
+module.exports = {findAll, findById, create, update, autenticado,deleteItem,deleteItemsUser, validationMiddleware, findByIdUser,compartilhar,listaCompartilhada};

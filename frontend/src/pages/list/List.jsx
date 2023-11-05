@@ -6,18 +6,20 @@ import UserIcon from "../../components/user-icon/UserIcon";
 import InviteIcon from "../../components/invite-icon/InviteIcon";
 import ToDo from "../../components/to-do/ToDo";
 import { updateItem } from "../../services/api";
+import { clearList } from "../../services/api";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function List() {
     const { userId } = useUserContext();
-    const [items, setItems] = useState([]); // Estado para armazenar os itens
+    const [items, setItems] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await findItensList(userId); // Supondo que você queira buscar itens do usuário atual (userId)
+                const response = await findItensList(userId);
                 setItems(response.data.items);
             } catch (error) {
-                console.error("Erro ao buscar itens da lista", error);
+                toast.warn("Lista vazia!");
             }
         }
         fetchData();
@@ -25,19 +27,30 @@ export default function List() {
 
     const handleCheckboxChange = async (itemIndex) => {      
         try {
-            if(items[itemIndex].estado === "comprar"){
-                items[itemIndex].estado = "comprado";
-            }
-            else{
-                items[itemIndex].estado = "comprar";
-            }
+            // ... lógica para atualizar o estado do item
             await updateItem(items[itemIndex]);
         } catch (error) {
             console.error("Erro ao atualizar o item", error);
         }
     };
+
+    const handleClearList = async () => {
+        try {
+            const response = await clearList(userId);
+            if (response.status === 200) {
+                console.log("Lista limpa com sucesso");
+                setItems([]);
+            } else {
+                console.log("Erro ao limpar lista");
+            }
+        } catch (error) {
+            console.error("Erro ao atualizar o item", error);
+        }
+    }
+
     return (
         <div className={styles.main}>
+            <ToastContainer />
             <div className={styles.content}>
                 <div className={styles.userContainer}>
                     <div className={styles.icons}>
@@ -58,7 +71,7 @@ export default function List() {
                             <img src="./plus-solid.svg" alt="Plus Icon" />
                             <span>Add Task</span>
                         </div>
-                        <div className={styles.button}>
+                        <div className={styles.button} onClick={()=> handleClearList()}>
                             <img src="./trash-solid.svg" alt="Plus Icon" />
                             <span>Clear Finished</span>
                         </div>
@@ -67,5 +80,4 @@ export default function List() {
             </div>
         </div>
     );
-    
 }

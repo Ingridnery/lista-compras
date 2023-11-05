@@ -14,7 +14,7 @@ export const login = async (email, senha) => {
         return response;
     }
     catch (error) {
-        console.error(error);
+        return error.response;
     }
 }
 export const updateItem = async(item) =>{
@@ -59,6 +59,14 @@ export const createUser = async (nome, email, senha) => {
         return response.data;
     }
     catch (error) {
+        console.error(error);
+    }
+}
+export const clearList = async (id) => {
+    try{
+        const response = await axios.delete(`http://localhost:8080/item/user/${id}`);
+        return response;
+    }catch(error){
         console.error(error);
     }
 }

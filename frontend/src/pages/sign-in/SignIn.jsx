@@ -7,6 +7,8 @@ import {login} from '../../services/api';
 import { useUserContext } from '../../UserContext';
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function SignIn(props){
     const navigate = useNavigate();
@@ -20,22 +22,24 @@ export default function SignIn(props){
         try{
             const response = await login(email, password);
             if(response.status === 200){
-                console.log("Login realizado com sucesso");
                 //utilizando o hook para setar o ID do usuário
                 setUserId(response.data.user.id);
                 navigate("/list");
 
             }else{
-                console.log("Erro ao realizar login");
+                toast.error("Erro ao realizar login! \n Verifique os dados e tente novamente");
             }
         }
         catch(err){
-            console.log(err);
+            toast.error("Erro ao realizar login!");
+
+            console.error("Erro ao realizar login", err);
         }
     }
    
     return(
         <div className={styles.main}>
+        <ToastContainer/>
 
             <div className={styles.content}>
                 <SignCard>

@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import {createUser} from '../../services/api';
 import { useUserContext } from '../../UserContext';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from "react-toastify";
 
 export default function SignUp(props){
     const [name, setName] = useState('');
@@ -16,22 +17,26 @@ export default function SignUp(props){
     const navigate = useNavigate();
 
 
+
     const handleCreateUser = async (e) => {
         try{
             const response = await createUser(name, email, password);
             if(response.user){
-                console.log("User created");
                 setUserId(response.data.user.id);
                 navigate("/list");
-                //window.location.href = "/signin"; //redirecionar pra pagina de tarefas
+            }
+            else{
+                toast.error("Erro ao realizar cadastro! \n Verifique os dados e tente novamente");
             }
         }
         catch(err){
+            toast.error("Erro ao realizar cadastro!");
             console.log(err);
         }
     }
     return(
         <div className={styles.main}>
+        <ToastContainer/>
             <div className={styles.content}>
                 <SignCard>
                     <Header/>
