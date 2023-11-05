@@ -44,6 +44,24 @@ export const findItensList = async (id) => {
         console.error(error);
     }
 }
+export const createItem = async (descricao, estado, usuario_id) => {
+    try {
+        const data = new URLSearchParams();
+        data.append('descricao', descricao);
+        data.append('estado', estado);
+        data.append('usuario_id', usuario_id);
+
+        const response = await axios.post('http://localhost:8080/item', data, {
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+        });
+        return response;
+    }
+    catch (error) {
+        console.error(error);
+    }
+}
 export const createUser = async (nome, email, senha) => {
     try{
         const data = new URLSearchParams();

@@ -39,7 +39,7 @@ app.delete("/user/:id", userController.deleteUser);
 app.get("/item", itemController.findAll);
 app.get("/item/:id", itemController.findById);
 app.get("/item/user/:id", itemController.findByIdUser)
-app.post("/item", itemController.autenticado, itemController.validationMiddleware, itemController.create);
+app.post("/item",itemController.validationMiddleware, itemController.create);
 app.put("/item/:id",itemController.update);
 app.delete("/item/:id", itemController.deleteItem);
 app.delete("/item/user/:id", itemController.deleteItemsUser);

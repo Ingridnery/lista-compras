@@ -1,0 +1,61 @@
+@use "../../sass/abstract/variables";
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: variables.$secundary;
+    width: 300px;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    font-size: 1.5em;
+    flex-direction: column; /* Centralizar o conteúdo verticalmente */
+  
+    .title {
+      font-size: 1.0em;
+      font-weight: bolder;
+      font-family:variables.$tilt-neon;
+      color: black;
+    }
+    .input {
+        border: none;
+        background-color: variables.$tertiary;
+        color: variables.$primary;
+        font-size: 0.8em;
+
+        &:focus{
+            outline: none;
+        }
+
+        &::placeholder{
+            color: variables.$primary;
+        }
+    }
+  
+   
+    .button{
+        border-style: none;
+        border-radius: 5%;
+    
+        color: variables.$secundary;
+        background-color: variables.$quaternary;
+    
+        font-size: 0.8em;
+        font-family: variables.$tilt-neon;
+        padding: 0.3em;
+    
+        margin: 0.5em 0em;
+    
+        box-shadow: 2px 2px 2px black;
+        
+    
+        &:hover{
+            background-color: variables.$secundary;
+            color: variables.$quaternary;
+            cursor: pointer;
+        }
+    }
+  }
+  

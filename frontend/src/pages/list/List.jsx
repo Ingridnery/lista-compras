@@ -8,12 +8,15 @@ import ToDo from "../../components/to-do/ToDo";
 import { updateItem } from "../../services/api";
 import { clearList } from "../../services/api";
 import { ToastContainer, toast } from "react-toastify";
-import ShareModal from "../../components/modal/ShareModal";
+import ShareModal from "../../components/modal-share/ShareModal";
+import AddItemModal from "../../components/modal-create/AddItemModal";
+import { createItem } from "../../services/api";
 
 export default function List() {
     const { userId } = useUserContext();
     const [items, setItems] = useState([]);
     const [showModal, setShowModal] = useState(false);
+    const [showAddItemModal, setShowAddItemModal] = useState(false);
     const [shareableLink, setShareableLink] = useState(''); // Novo estado para o link
 
 
@@ -32,10 +35,9 @@ export default function List() {
 
     const handleCheckboxChange = async (itemIndex) => {      
         try {
-            // ... lógica para atualizar o estado do item
             await updateItem(items[itemIndex]);
         } catch (error) {
-            console.error("Erro ao atualizar o item", error);
+            toast.error("Erro ao atualizar o item!");
         }
     };
 
@@ -43,24 +45,45 @@ export default function List() {
         try {
             const response = await clearList(userId);
             if (response.status === 200) {
-                console.log("Lista limpa com sucesso");
+                toast.success("Lista limpa com sucesso!");
                 setItems([]);
             } else {
-                console.log("Erro ao limpar lista");
+                toast.error("Erro ao limpar a lista!");
             }
         } catch (error) {
-            console.error("Erro ao atualizar o item", error);
-        }
+            toast.error("Erro ao limpar a lista!");        }
     }
     const handleShareList = async () => {
         try {
-            console.log("Compartilhar lista");
             const shareableLink = `${window.location.origin}/list/${userId}`;
-            console.log(shareableLink);
             setShareableLink(shareableLink); // Defina o link no estado
             setShowModal(true);
         } catch (error) {
-            console.error("Erro ao compartilhar a lista", error);
+            toast.error("Erro ao compartilhar a lista!");
+        }
+    }
+    const fetchItems = async () => {
+        try {   
+            console.log("Fetch items");
+            const response = await findItensList(userId);
+            setItems(response.data.items);
+        } catch (error) {
+            toast.warn("Lista vazia!");
+        }
+    }
+    // Função para adicionar um item
+    const handleAddItem = async (itemDescription) => {
+        try {
+            const response = await createItem(itemDescription, "comprar", userId);
+            if (response.status === 201) {
+                toast.success("Item adicionado com sucesso!");
+                setShowModal(false);
+                fetchItems();
+            } else {
+                toast.error("Erro ao adicionar o item!");
+            }
+        } catch (error) {
+            console.error("Erro ao adicionar o item", error);
         }
     }
 
@@ -84,7 +107,7 @@ export default function List() {
                             <ToDo key={index} text={item.descricao} checked={item.estado === "comprado"}  onChange={() => handleCheckboxChange(index)} />
                         ))}
                     </div>
-                    <div className={styles.menu}>
+                    <div className={styles.menu} onClick={() => setShowModal(true)}>
                         <div className={styles.button}>
                             <img src="./plus-solid.svg" alt="Plus Icon" />
                             <span>Add Task</span>
@@ -96,6 +119,10 @@ export default function List() {
                     </div>
                 </div>
             </div>
+            <AddItemModal isOpen={showModal} onOpen={()=> setShowModal(true)} onClose={()=> setShowModal(false)} onAddItem={handleAddItem} />
+
         </div>
+
     );
 }
+ 
