@@ -1,5 +1,5 @@
 @import "../../sass/abstract/variables";
-
+/*
 .container{
     display: flex;
     flex-direction: column;
@@ -34,5 +34,206 @@
         font-weight: bolder;
         font-size: large;
         color: $quaternary;
+    }
+}
+*/
+
+/* Extra small devices */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    
+        .circleLink{
+            margin: 0em 1.5em;
+            margin-bottom: 1em;
+            
+    
+            .link {
+                width: fit-content;
+                height: fit-content;
+                
+                .image {
+                    width: 13rem;
+                    border-radius: 60%;
+                    box-shadow: 2px 5px 5px black;
+                    opacity: 1;
+                }
+            }
+    
+            &:hover{
+                opacity: 0.8;
+                text-decoration: underline;
+            }
+        }
+        
+        .text {
+            font-family: $tilt-neon;
+            font-weight: bolder;
+            font-size: larger;
+            color: $quaternary;
+        }
+    }
+}
+
+/* Small devices (portrait tablets and large phones) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    
+        .circleLink{
+            margin: 0em 1.5em;
+            margin-bottom: 1em;
+            
+    
+            .link {
+                width: fit-content;
+                height: fit-content;
+                
+                .image {
+                    width: 15rem;
+                    border-radius: 60%;
+                    box-shadow: 2px 5px 5px black;
+                    opacity: 1;
+                }
+            }
+    
+            &:hover{
+                opacity: 0.8;
+                text-decoration: underline;
+            }
+        }
+        
+        .text {
+            font-family: $tilt-neon;
+            font-weight: bolder;
+            font-size: larger;
+            color: $quaternary;
+        }
+    }
+}
+
+/* Medium devices (landscape tablets) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    
+        .circleLink{
+            margin: 0em 1.5em;
+            margin-bottom: 1em;
+            
+    
+            .link {
+                width: fit-content;
+                height: fit-content;
+                
+                .image {
+                    width: 10rem;
+                    border-radius: 60%;
+                    box-shadow: 2px 5px 5px black;
+                    opacity: 1;
+                }
+            }
+    
+            &:hover{
+                opacity: 0.8;
+                text-decoration: underline;
+            }
+        }
+        
+        .text {
+            font-family: $tilt-neon;
+            font-weight: bolder;
+            font-size: large;
+            color: $quaternary;
+        }
+    }
+}
+
+/* Large devices (laptops/desktops) */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    
+        .circleLink{
+            margin: 0em 1.5em;
+            margin-bottom: 1em;
+            
+    
+            .link {
+                width: fit-content;
+                height: fit-content;
+                
+                .image {
+                    width: 10rem;
+                    border-radius: 60%;
+                    box-shadow: 2px 5px 5px black;
+                    opacity: 1;
+                }
+            }
+    
+            &:hover{
+                opacity: 0.8;
+                text-decoration: underline;
+            }
+        }
+        
+        .text {
+            font-family: $tilt-neon;
+            font-weight: bolder;
+            font-size: large;
+            color: $quaternary;
+        }
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1201px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    
+        .circleLink{
+            margin: 0em 1.5em;
+            margin-bottom: 1em;
+            
+    
+            .link {
+                width: fit-content;
+                height: fit-content;
+                
+                .image {
+                    width: 10rem;
+                    border-radius: 60%;
+                    box-shadow: 2px 5px 5px black;
+                    opacity: 1;
+                }
+            }
+    
+            &:hover{
+                opacity: 0.8;
+                text-decoration: underline;
+            }
+        }
+        
+        .text {
+            font-family: $tilt-neon;
+            font-weight: bolder;
+            font-size: large;
+            color: $quaternary;
+        }
     }
 }
