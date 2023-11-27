@@ -25,7 +25,7 @@ export default function SignUp(props){
         try{
             const response = await createUser(name, email, password);
             if(response.user){
-                setUserId(response.data.user.id);
+                setUserId(response.user.id);
                 navigate("/list");
             }
             else{
