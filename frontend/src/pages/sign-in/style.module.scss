@@ -1,7 +1,7 @@
 @use "../../sass/base/reset";
 @use "../../sass/abstract/variables";
 @use "../../sass/abstract/mixins";
-
+/*
 .main {
     background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp6398974.jpg&f=1&nofb=1&ipt=c800d2398c6e638aeafae8f18beb269a3c3b131dfaaa40062c7cc16a3b6b2887&ipo=images");
     background-color: variables.$quaternary;
@@ -50,4 +50,319 @@
 
     }
 
+}
+*/
+/* Extra small devices */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .main {
+        background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp6398974.jpg&f=1&nofb=1&ipt=c800d2398c6e638aeafae8f18beb269a3c3b131dfaaa40062c7cc16a3b6b2887&ipo=images");
+        background-color: variables.$quaternary;
+        background-repeat: no-repeat;
+        background-size: 300% 100%;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+
+        width: 100%;
+        height: 100%;
+    
+        left: 0;
+        top: 0;
+
+        .subDiv{
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            .content{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        
+               .buttonContainer{
+                    display: flex;
+                    justify-content: space-evenly;
+                    width: 30em;
+               }
+        
+               .inputContainer{
+                    @include mixins.centerAll;
+                    flex-direction: column;
+                    .description{
+                        @include mixins.descriptionStyle;
+        
+                        .highlight{
+                            &:hover {
+                                cursor: pointer;
+                                color: black;
+                            }
+                        }
+                    }
+               }
+        
+            }
+
+        }
+    
+    }
+}
+
+/* Small devices (portrait tablets and large phones) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .main {
+        background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp6398974.jpg&f=1&nofb=1&ipt=c800d2398c6e638aeafae8f18beb269a3c3b131dfaaa40062c7cc16a3b6b2887&ipo=images");
+        background-color: variables.$quaternary;
+        background-repeat: no-repeat;
+        background-size: 300% 100%;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+
+        width: 100%;
+        height: 100%;
+    
+        left: 0;
+        top: 0;
+
+        .subDiv{
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            .content{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        
+               .buttonContainer{
+                    display: flex;
+                    justify-content: space-evenly;
+                    width: 30em;
+               }
+        
+               .inputContainer{
+                    @include mixins.centerAll;
+                    flex-direction: column;
+                    .description{
+                        @include mixins.descriptionStyle;
+        
+                        .highlight{
+                            &:hover {
+                                cursor: pointer;
+                                color: black;
+                            }
+                        }
+                    }
+               }
+        
+            }
+
+        }
+    
+    }
+}
+
+/* Medium devices (landscape tablets) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .main {
+        background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp6398974.jpg&f=1&nofb=1&ipt=c800d2398c6e638aeafae8f18beb269a3c3b131dfaaa40062c7cc16a3b6b2887&ipo=images");
+        background-color: variables.$quaternary;
+        background-repeat: no-repeat;
+        background-size: 200% 100%;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+
+        width: 100%;
+        height: 100%;
+    
+        left: 0;
+        top: 0;
+
+        .subDiv{
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            .content{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        
+               .buttonContainer{
+                    display: flex;
+                    justify-content: space-evenly;
+                    width: 30em;
+               }
+        
+               .inputContainer{
+                    @include mixins.centerAll;
+                    flex-direction: column;
+                    .description{
+                        @include mixins.descriptionStyle;
+        
+                        .highlight{
+                            &:hover {
+                                cursor: pointer;
+                                color: black;
+                            }
+                        }
+                    }
+               }
+        
+            }
+
+        }
+    
+    }
+}
+
+/* Large devices (laptops/desktops) */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    .main {
+        background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp6398974.jpg&f=1&nofb=1&ipt=c800d2398c6e638aeafae8f18beb269a3c3b131dfaaa40062c7cc16a3b6b2887&ipo=images");
+        background-color: variables.$quaternary;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+
+        width: 100%;
+        height: 100%;
+    
+        left: 0;
+        top: 0;
+
+        .subDiv{
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            .content{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        
+               .buttonContainer{
+                    display: flex;
+                    justify-content: space-evenly;
+                    width: 30em;
+               }
+        
+               .inputContainer{
+                    @include mixins.centerAll;
+                    flex-direction: column;
+                    .description{
+                        @include mixins.descriptionStyle;
+        
+                        .highlight{
+                            &:hover {
+                                cursor: pointer;
+                                color: black;
+                            }
+                        }
+                    }
+               }
+        
+            }
+
+        }
+    
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1201px) {
+    .main {
+        background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp6398974.jpg&f=1&nofb=1&ipt=c800d2398c6e638aeafae8f18beb269a3c3b131dfaaa40062c7cc16a3b6b2887&ipo=images");
+        background-color: variables.$quaternary;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+
+        width: 100%;
+        height: 100%;
+    
+        left: 0;
+        top: 0;
+
+        .subDiv{
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            .content{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        
+               .buttonContainer{
+                    display: flex;
+                    justify-content: space-evenly;
+                    width: 30em;
+               }
+        
+               .inputContainer{
+                    @include mixins.centerAll;
+                    flex-direction: column;
+                    .description{
+                        @include mixins.descriptionStyle;
+        
+                        .highlight{
+                            &:hover {
+                                cursor: pointer;
+                                color: black;
+                            }
+                        }
+                    }
+               }
+        
+            }
+
+        }
+    
+    }
 }

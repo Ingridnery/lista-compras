@@ -1,5 +1,6 @@
 @use "../../sass/abstract/variables";
 
+/*
 .container{
 
     opacity: 1;
@@ -39,5 +40,231 @@
         width: 2em;
         height: 2em;
         margin-right: 0.5em;
+    }
+}
+*/
+
+/* Extra small devices */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .container{
+
+        opacity: 1;
+    
+        display: flex;
+        flex-direction: row;
+        background-color: variables.$tertiary;
+        justify-content: flex-start;
+        align-items: center;
+    
+        border-radius: 15px;
+        padding: 1em;
+    
+        box-shadow: black 1px 1px 1px;
+        margin-bottom: 1em;
+    
+        &:hover{
+            outline: black solid 2px;
+        }
+    
+        .input {
+            border: none;
+            background-color: variables.$tertiary;
+            color: variables.$primary;
+            font-size: 1.1em;
+            
+            &:focus{
+                outline: none;
+            }
+    
+            &::placeholder{
+                color: variables.$primary;
+            }
+        }
+    
+        .icon{
+            width: 2em;
+            height: 2em;
+            margin-right: 0.5em;
+        }
+    }
+}
+
+/* Small devices (portrait tablets and large phones) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .container{
+
+        opacity: 1;
+    
+        display: flex;
+        flex-direction: row;
+        background-color: variables.$tertiary;
+        justify-content: flex-start;
+        align-items: center;
+    
+        border-radius: 15px;
+        padding: 1em;
+    
+        box-shadow: black 1px 1px 1px;
+        margin-bottom: 1em;
+    
+        &:hover{
+            outline: black solid 2px;
+        }
+    
+        .input {
+            border: none;
+            background-color: variables.$tertiary;
+            color: variables.$primary;
+            font-size: 1.1em;
+            
+            &:focus{
+                outline: none;
+            }
+    
+            &::placeholder{
+                color: variables.$primary;
+            }
+        }
+    
+        .icon{
+            width: 2em;
+            height: 2em;
+            margin-right: 0.5em;
+        }
+    }
+}
+
+/* Medium devices (landscape tablets) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .container{
+
+        opacity: 1;
+    
+        display: flex;
+        flex-direction: row;
+        background-color: variables.$tertiary;
+        justify-content: flex-start;
+        align-items: center;
+    
+        border-radius: 15px;
+        padding: 1em;
+    
+        box-shadow: black 1px 1px 1px;
+        margin-bottom: 1em;
+        width: 30em;
+    
+        &:hover{
+            outline: black solid 2px;
+        }
+    
+        .input {
+            border: none;
+            background-color: variables.$tertiary;
+            color: variables.$primary;
+            font-size: 0.8em;
+            &:focus{
+                outline: none;
+            }
+    
+            &::placeholder{
+                color: variables.$primary;
+            }
+        }
+    
+        .icon{
+            width: 2em;
+            height: 2em;
+            margin-right: 0.5em;
+        }
+    }
+}
+
+/* Large devices (laptops/desktops) */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    .container{
+
+        opacity: 1;
+    
+        display: flex;
+        flex-direction: row;
+        background-color: variables.$tertiary;
+        justify-content: flex-start;
+        align-items: center;
+    
+        border-radius: 15px;
+        padding: 1em;
+    
+        box-shadow: black 1px 1px 1px;
+        margin-bottom: 1em;
+        width: 30em;
+    
+        &:hover{
+            outline: black solid 2px;
+        }
+    
+        .input {
+            border: none;
+            background-color: variables.$tertiary;
+            color: variables.$primary;
+            font-size: 0.8em;
+            &:focus{
+                outline: none;
+            }
+    
+            &::placeholder{
+                color: variables.$primary;
+            }
+        }
+    
+        .icon{
+            width: 2em;
+            height: 2em;
+            margin-right: 0.5em;
+        }
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1201px) {
+    .container{
+
+        opacity: 1;
+    
+        display: flex;
+        flex-direction: row;
+        background-color: variables.$tertiary;
+        justify-content: flex-start;
+        align-items: center;
+    
+        border-radius: 15px;
+        padding: 1em;
+    
+        box-shadow: black 1px 1px 1px;
+        margin-bottom: 1em;
+        width: 30em;
+    
+        &:hover{
+            outline: black solid 2px;
+        }
+    
+        .input {
+            border: none;
+            background-color: variables.$tertiary;
+            color: variables.$primary;
+            font-size: 0.8em;
+            &:focus{
+                outline: none;
+            }
+    
+            &::placeholder{
+                color: variables.$primary;
+            }
+        }
+    
+        .icon{
+            width: 2em;
+            height: 2em;
+            margin-right: 0.5em;
+        }
     }
 }

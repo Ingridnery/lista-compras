@@ -1,5 +1,5 @@
 @import "../../sass/abstract/variables";
-
+/*
 .container {
     display: flex;
     justify-content: space-around;
@@ -15,4 +15,105 @@
 
     width: 50em;
     height: 40em;
+}
+*/
+
+/* Extra small devices */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+    
+        background-color: $primary;
+        border-radius: 1%;
+    
+        box-shadow: 3px 3px 6px black;
+    
+        opacity: 0.85;
+    
+        width: 95%;
+        height: 97%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+    
+        background-color: $primary;
+        border-radius: 1%;
+    
+        box-shadow: 3px 3px 6px black;
+    
+        opacity: 0.85;
+    
+        width: 80%;
+        height: 40em;
+    }
+}
+
+/* Medium devices (landscape tablets) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+    
+        background-color: $primary;
+        border-radius: 1%;
+    
+        box-shadow: 3px 3px 6px black;
+    
+        opacity: 0.85;
+    
+        width: 90%;
+        height: 40em;
+    }
+}
+
+/* Large devices (laptops/desktops) */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+    
+        background-color: $primary;
+        border-radius: 1%;
+    
+        box-shadow: 3px 3px 6px black;
+    
+        opacity: 0.85;
+    
+        width: 90%;
+        height: 40em;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1201px) {
+    .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+    
+        background-color: $primary;
+        border-radius: 1%;
+    
+        box-shadow: 3px 3px 6px black;
+    
+        opacity: 0.85;
+    
+        width: 90%;
+        height: 40em;
+    }
 }

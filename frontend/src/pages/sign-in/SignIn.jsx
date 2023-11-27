@@ -41,6 +41,7 @@ export default function SignIn(props){
         <div className={styles.main}>
         <ToastContainer/>
 
+        <div className={styles.subDiv}>
             <div className={styles.content}>
                 <SignCard>
 
@@ -63,6 +64,9 @@ export default function SignIn(props){
 
                 </SignCard>
             </div>
+
+        </div>
+
 
         </div>
     )
