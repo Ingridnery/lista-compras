@@ -1,5 +1,5 @@
 @import "../../sass/abstract/variables";
-
+/*
 .container{
 
     width: 100%;
@@ -36,5 +36,216 @@
 
         max-width: 100%;
         opacity: 1;
+    }
+}
+*/
+
+/* Extra small devices */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .container{
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    
+        padding: 1.5em;
+    
+        &:hover{
+    
+            .title{
+                text-decoration: underline;
+                text-decoration-thickness: 4px;
+    
+                cursor: pointer;
+            }
+    
+        }
+    
+        .title{
+            font-size: 3em;
+            text-align: left;
+            font-family: $tilt-neon;
+            color: $tertiary;
+    
+            text-shadow: black 1px 2px;
+            opacity: 1;
+        }
+    
+        .logo{
+            width: 5em;
+            height: 5em;
+    
+            max-width: 100%;
+            opacity: 1;
+        }
+    }
+}
+
+/* Small devices (portrait tablets and large phones) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .container{
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    
+        padding: 1.5em;
+    
+        &:hover{
+    
+            .title{
+                text-decoration: underline;
+                text-decoration-thickness: 4px;
+    
+                cursor: pointer;
+            }
+    
+        }
+    
+        .title{
+            font-size: 3em;
+            text-align: left;
+            font-family: $tilt-neon;
+            color: $tertiary;
+    
+            text-shadow: black 1px 2px;
+            opacity: 1;
+        }
+    
+        .logo{
+            width: 5em;
+            height: 5em;
+    
+            max-width: 100%;
+            opacity: 1;
+        }
+    }
+}
+
+/* Medium devices (landscape tablets) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .container{
+
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    
+        padding: 1.5em;
+    
+        &:hover{
+    
+            .title{
+                text-decoration: underline;
+                text-decoration-thickness: 4px;
+    
+                cursor: pointer;
+            }
+    
+        }
+    
+        .title{
+            font-size: 5em;
+            font-family: $tilt-neon;
+            color: $tertiary;
+    
+            text-shadow: black 1px 2px;
+            opacity: 1;
+        }
+    
+        .logo{
+            width: 4.5em;
+            height: 4.5em;
+    
+            max-width: 100%;
+            opacity: 1;
+        }
+    }
+}
+
+/* Large devices (laptops/desktops) */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    .container{
+
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    
+        padding: 1.5em;
+    
+        &:hover{
+    
+            .title{
+                text-decoration: underline;
+                text-decoration-thickness: 4px;
+    
+                cursor: pointer;
+            }
+    
+        }
+    
+        .title{
+            font-size: 5em;
+            font-family: $tilt-neon;
+            color: $tertiary;
+    
+            text-shadow: black 1px 2px;
+            opacity: 1;
+        }
+    
+        .logo{
+            width: 4.5em;
+            height: 4.5em;
+    
+            max-width: 100%;
+            opacity: 1;
+        }
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1201px) {
+    .container{
+
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    
+        padding: 1.5em;
+    
+        &:hover{
+    
+            .title{
+                text-decoration: underline;
+                text-decoration-thickness: 4px;
+    
+                cursor: pointer;
+            }
+    
+        }
+    
+        .title{
+            font-size: 5em;
+            font-family: $tilt-neon;
+            color: $tertiary;
+    
+            text-shadow: black 1px 2px;
+            opacity: 1;
+        }
+    
+        .logo{
+            width: 4.5em;
+            height: 4.5em;
+    
+            max-width: 100%;
+            opacity: 1;
+        }
     }
 }
