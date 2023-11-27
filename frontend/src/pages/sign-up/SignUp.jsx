@@ -40,27 +40,32 @@ export default function SignUp(props){
     return(
         <div className={styles.main}>
         <ToastContainer/>
-            <div className={styles.content}>
-                <SignCard>
-                    <Header/>
-                    <div className={styles.inputContainer}>
-                        <form>
-                            <Input className={styles.input} type="text" name="name"  value={name}  onChange={(e) => setName(e.target.value)} logo="./user.png">Username</Input>
-                            <Input className={styles.input} type="text" name="email" value={email}  onChange={(e) => setEmail(e.target.value)} logo="./email.png">Email</Input>
-                            <Input className={styles.input} type="password" name="password" value={password}  onChange={(e) => setPassword(e.target.value)} logo="./padlock.png">Password</Input>
-                        </form>
 
-                        <p className={styles.description}>or <b className={styles.highlight}
-                        onClick={redirectLogin}>login to your account</b></p>
-                    </div>
-                    
-                    <div className={styles.buttonContainer}>
-                        <Button onClick={() => handleCreateUser()}>Register</Button>
-                        <Button>Reset</Button>
-                    </div>
+            <div className={styles.subDiv}>
+                <div className={styles.content}>
+                    <SignCard>
+                        <Header/>
+                        <div className={styles.inputContainer}>
+                            <form>
+                                <Input className={styles.input} type="text" name="name"  value={name}  onChange={(e) => setName(e.target.value)} logo="./user.png">Username</Input>
+                                <Input className={styles.input} type="text" name="email" value={email}  onChange={(e) => setEmail(e.target.value)} logo="./email.png">Email</Input>
+                                <Input className={styles.input} type="password" name="password" value={password}  onChange={(e) => setPassword(e.target.value)} logo="./padlock.png">Password</Input>
+                            </form>
 
-                </SignCard>
+                            <p className={styles.description}>or <b className={styles.highlight}
+                            onClick={redirectLogin}>login to your account</b></p>
+                        </div>
+                        
+                        <div className={styles.buttonContainer}>
+                            <Button onClick={() => handleCreateUser()}>Register</Button>
+                            <Button>Reset</Button>
+                        </div>
+
+                    </SignCard>
+                </div>
+                
             </div>
+            
 
         </div>
 
