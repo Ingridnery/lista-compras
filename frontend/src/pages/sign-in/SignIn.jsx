@@ -17,6 +17,10 @@ export default function SignIn(props){
     const { setUserId } = useUserContext(); // Use o hook para obter setUserId
     //const { userId } = useUserContext(); // Usando o hook para obter o ID do usuário
 
+    const redirectRegister  = () => {  
+        let path = "/signup"; 
+        navigate(path);
+    }
 
     const handleLogin = async (e) => { 
         try{
@@ -53,7 +57,8 @@ export default function SignIn(props){
                             <Input className={styles.input} onChange={(e) => setPassword(e.target.value)} type="password" name="password" value={password} logo="./padlock.png">Password</Input>
                         </form>
 
-                        <p className={styles.description}>or <b className={styles.highlight}>create an account </b></p>
+                        <p className={styles.description}>or <b className={styles.highlight}
+                        onClick={redirectRegister}>create an account </b></p>
                     </div>
                     
                     <div className={styles.buttonContainer}>
